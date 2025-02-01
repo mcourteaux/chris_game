@@ -12,137 +12,137 @@ using namespace std;
 int get_index(int a) {
     int index = 0;
     switch(a) {
-    case sf::Keyboard::A:
+    case sf::Keyboard::Scan::A:
         index = 0;
         break;
-    case sf::Keyboard::S:
+    case sf::Keyboard::Scan::S:
         index = 1;
         break;
-    case sf::Keyboard::D:
+    case sf::Keyboard::Scan::D:
         index = 2;
         break;
-    case sf::Keyboard::F:
+    case sf::Keyboard::Scan::F:
         index = 3;
         break;
-    case sf::Keyboard::G:
+    case sf::Keyboard::Scan::G:
         index = 4;
         break;
-    case sf::Keyboard::H:
+    case sf::Keyboard::Scan::H:
         index = 5;
         break;
-    case sf::Keyboard::J:
+    case sf::Keyboard::Scan::J:
         index = 6;
         break;
-    case sf::Keyboard::K:
+    case sf::Keyboard::Scan::K:
         index = 7;
         break;
-    case sf::Keyboard::L:
+    case sf::Keyboard::Scan::L:
         index = 8;
         break;
-    case sf::Keyboard::SemiColon:
+    case sf::Keyboard::Scan::Semicolon:
         index = 9;
         break;
-    case sf::Keyboard::Z:
+    case sf::Keyboard::Scan::Z:
         index = 10;
         break;
-    case sf::Keyboard::X:
+    case sf::Keyboard::Scan::X:
         index = 11;
         break;
-    case sf::Keyboard::C:
+    case sf::Keyboard::Scan::C:
         index = 12;
         break;
-    case sf::Keyboard::V:
+    case sf::Keyboard::Scan::V:
         index = 13;
         break;
-    case sf::Keyboard::B:
+    case sf::Keyboard::Scan::B:
         index = 14;
         break;
-    case sf::Keyboard::N:
+    case sf::Keyboard::Scan::N:
         index = 15;
         break;
-    case sf::Keyboard::M:
+    case sf::Keyboard::Scan::M:
         index = 16;
         break;
-    case sf::Keyboard::Comma:
+    case sf::Keyboard::Scan::Comma:
         index = 17;
         break;
-    case sf::Keyboard::Period:
+    case sf::Keyboard::Scan::Period:
         index = 18;
         break;
-    case sf::Keyboard::Slash:
+    case sf::Keyboard::Scan::Slash:
         index = 19;
         break;
-    case sf::Keyboard::Q:
+    case sf::Keyboard::Scan::Q:
         index = 20;
         break;
-    case sf::Keyboard::W:
+    case sf::Keyboard::Scan::W:
         index = 21;
         break;
-    case sf::Keyboard::E:
+    case sf::Keyboard::Scan::E:
         index = 22;
         break;
-    case sf::Keyboard::R:
+    case sf::Keyboard::Scan::R:
         index = 23;
         break;
-    case sf::Keyboard::T:
+    case sf::Keyboard::Scan::T:
         index = 24;
         break;
-    case sf::Keyboard::Y:
+    case sf::Keyboard::Scan::Y:
         index = 25;
         break;
-    case sf::Keyboard::U:
+    case sf::Keyboard::Scan::U:
         index = 26;
         break;
-    case sf::Keyboard::I:
+    case sf::Keyboard::Scan::I:
         index = 27;
         break;
-    case sf::Keyboard::O:
+    case sf::Keyboard::Scan::O:
         index = 28;
         break;
-    case sf::Keyboard::P:
+    case sf::Keyboard::Scan::P:
         index = 29;
         break;
-    case sf::Keyboard::Num1:
-    case sf::Keyboard::Numpad1:
+    case sf::Keyboard::Scan::Num1:
+    case sf::Keyboard::Scan::Numpad1:
         index = 30;
         break;
-    case sf::Keyboard::Num2:
-    case sf::Keyboard::Numpad2:
+    case sf::Keyboard::Scan::Num2:
+    case sf::Keyboard::Scan::Numpad2:
         index = 31;
         break;
-    case sf::Keyboard::Num3:
-    case sf::Keyboard::Numpad3:
+    case sf::Keyboard::Scan::Num3:
+    case sf::Keyboard::Scan::Numpad3:
         index = 32;
         break;
-    case sf::Keyboard::Num4:
-    case sf::Keyboard::Numpad4:
+    case sf::Keyboard::Scan::Num4:
+    case sf::Keyboard::Scan::Numpad4:
         index = 33;
         break;
-    case sf::Keyboard::Num5:
-    case sf::Keyboard::Numpad5:
+    case sf::Keyboard::Scan::Num5:
+    case sf::Keyboard::Scan::Numpad5:
         index = 34;
         break;
-    case sf::Keyboard::Num6:
-    case sf::Keyboard::Numpad6:
+    case sf::Keyboard::Scan::Num6:
+    case sf::Keyboard::Scan::Numpad6:
         index = 35;
         break;
-    case sf::Keyboard::Num7:
-    case sf::Keyboard::Numpad7:
+    case sf::Keyboard::Scan::Num7:
+    case sf::Keyboard::Scan::Numpad7:
         index = 36;
         break;
-    case sf::Keyboard::Num8:
-    case sf::Keyboard::Numpad8:
+    case sf::Keyboard::Scan::Num8:
+    case sf::Keyboard::Scan::Numpad8:
         index = 37;
         break;
-    case sf::Keyboard::Num9:
-    case sf::Keyboard::Numpad9:
+    case sf::Keyboard::Scan::Num9:
+    case sf::Keyboard::Scan::Numpad9:
         index = 38;
         break;
-    case sf::Keyboard::Num0:
-    case sf::Keyboard::Numpad0:
+    case sf::Keyboard::Scan::Num0:
+    case sf::Keyboard::Scan::Numpad0:
         index = 39;
         break;
-    case sf::Keyboard::Space:
+    case sf::Keyboard::Scan::Space:
         index = rand() % 40;
         break;
         //cout<<index<<endl;
@@ -236,25 +236,27 @@ int main() {
                 window.close();
             }
             else if(event.type == sf::Event::KeyPressed) {
-                int32_t index = get_index(event.key.code);
-                switch(event.key.code) {
-                case sf::Keyboard::Z:
+                int32_t index = get_index(event.key.scancode);
+                switch(event.key.scancode) {
+                    case sf::Keyboard::Scan::Z:
                     z = true;
                     break;
-                case sf::Keyboard::Q:
+                case sf::Keyboard::Scan::Q:
                     q = true;
                     break;
-                case sf::Keyboard::P:
+                case sf::Keyboard::Scan::P:
                     p = true;
                     break;
-                case sf::Keyboard::Space:
+                case sf::Keyboard::Scan::Space:
                     space = index;
+                    break;
+                default:
                     break;
                 }
                 if(index >= 0) {
                     notes[index].play();
-                    positions[index][0] = rand() % (xres-150);
-                    positions[index][1] = rand() % (yres-150);
+                    positions[index][0] = rand() % (xres-150) + 75;
+                    positions[index][1] = rand() % (yres-150) + 75;
                     colors[index].r = rand() % 256;
                     colors[index].g = rand() % 256;
                     colors[index].b = rand() % 256;
@@ -282,20 +284,21 @@ int main() {
                 }
             }
             else if(event.type == sf::Event::KeyReleased) {
-                int32_t index = get_index(event.key.code);
-                switch(event.key.code) {
-                case sf::Keyboard::Z:
+                int32_t index = get_index(event.key.scancode);
+                switch(event.key.scancode) {
+                case sf::Keyboard::Scan::Z:
                     z = false;
                     break;
-                case sf::Keyboard::Q:
+                case sf::Keyboard::Scan::Q:
                     q = false;
                     break;
-                case sf::Keyboard::P:
+                case sf::Keyboard::Scan::P:
                     p = false;
                     break;
-                case sf::Keyboard::Space:
+                case sf::Keyboard::Scan::Space:
                     index = space;
                     break;
+                default: break;
                 }
                 if(index >= 0) {
                     notes[index].stop();
